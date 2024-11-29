@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+ <h1> zoologico</h1>
+ <form id="animalForm">
+     <label for="nombre">Nombre:</label>
+     <input type="text" id="nombre" required><br><br>
+
+     <label for="especie">Especie:</label>
+     <select id="especie" required>
+         <option value="leon">León</option>
+         <option value="elefante">Elefante</option>
+         <option value="tigra">Tigre</option>
+     </select><br><br>
+
+     <button type="button" onclick="agregarAnimal()">Agregar Animal</button>
+ </form>
+
+ <h2>Animales</h2>
+ <ul id="listaAnimales"></ul>
+
+ <h2>Sonidos de Animales</h2>
+ <ul id="sonidosAnimales"></ul>
+
+ <hr>
+
+ <h1>Inventario de Productos</h1>
+
+ <form id="formularioProductos">
+     <label for="nombreProducto">Nombre del Producto:</label>
+     <input type="text" id="nombreProducto" name="nombreProducto" required>
+
+     <label for="precioProducto">Precio del Producto:</label>
+     <input type="number" id="precioProducto" name="precioProducto" required>
+
+     <label for="cantidadStock">Cantidad en Stock:</label>
+     <input type="number" id="cantidadStock" name="cantidadStock" required>
+
+     <label for="tipoProducto">Tipo de Producto:</label>
+     <select id="tipoProducto" name="tipoProducto" onchange="toggleMarca()">
+         <option value="Producto">Producto</option>
+         <option value="Electrodomestico">Electrodoméstico</option>
+     </select>
+
+     <div id="marcaField" style="display: none;">
+         <label for="marcaProducto">Marca (solo para Electrodomésticos):</label>
+         <input type="text" id="marcaProducto" name="marcaProducto">
+     </div>
+
+     <button type="button" onclick="agregarProducto()">Agregar Producto</button>
+     <button type="button" onclick="listarProductosConBajoStock()">Listar Productos con Bajo Stock</button>
+ </form>
+
+ <div id="resultado1"></div>
+
+ <hr>
+ 
+
+<h1>Sistema de Empleados</h1>
+<h2>Agregar Empleado</h2>
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" placeholder="Nombre"><br>
+<label for="sueldo">Sueldo por Hora:</label>
+<input type="number" id="sueldo" placeholder="Sueldo por Hora"><br>
+<label for="tipoEmpleado">Tipo de Empleado:</label>
+<select id="tipoEmpleado">
+    <option value="">Seleccione un tipo</option>
+    <option value="Tiempo Completo">Empleado a Tiempo Completo</option>
+    <option value="Medio Tiempo">Empleado a Medio Tiempo</option>
+</select><br>
+<label for="horas">Horas Trabajadas:</label>
+<input type="number" id="horas" placeholder="Horas Trabajadas"><br>
+<button onclick="agregarEmpleado()">Agregar Empleado</button>
+<button onclick="listarEmpleados()">Listar Empleados</button>
+<h2>Resultados</h2>
+<div id="resultado3" class="resultado"></div>
+</div>
+<hr>
+
+
+<h1>Gestión de Cuentas Bancarias</h1>
+<form id="form-cuenta">
+    <label>Número de Cuenta:</label>
+    <input type="text" id="numero-cuenta" required>
+    <br>
+    <label>Saldo Inicial:</label>
+    <input type="number" id="saldo" required>
+    <br>
+    <label>Tipo de Cuenta:</label>
+    <select id="tipo">
+        <option value="ahorros">Cuenta de Ahorros</option>
+        <option value="corriente">Cuenta Corriente</option>
+    </select>
+    <br>
+    <button type="submit">Agregar Cuenta</button>
+</form>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Número de Cuenta</th>
+            <th>Saldo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="tabla-cuentas"></tbody>
+</table>
+
+
+<div class="container">
+        <h1>sistemas de cursos </h1>
+        <div class="info-curso">
+            <h2 id="nombre-curso">Curso: Matemáticas Avanzadas</h2>
+            <p id="descripcion-curso">Este curso cubre los conceptos más importantes de matemáticas avanzadas.</p>
+        </div>
+
+        <!-- Formulario para agregar estudiante -->
+        <div class="formulario">
+            <div>
+                <input type="text" id="nombre-estudiante" placeholder="Nombre del estudiante">
+                <input type="number" id="edad-estudiante" placeholder="Edad del estudiante">
+                <button id="agregar-estudiante">Agregar Estudiante</button>
+            </div>
+
+            <!-- Formulario para agregar calificación -->
+            <div>
+                <select id="estudiante-calificacion">
+                    <option value="">Seleccione un estudiante</option>
+                </select>
+                <input type="number" id="calificacion-estudiante" placeholder="Calificación">
+                <button id="agregar-calificacion">Agregar Calificación</button>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+            <tbody id="lista-estudiantes">
+                <!-- Los estudiantes se agregarán aquí -->
+            </tbody>
+        </table>
+
+        <div class="promedio-curso" id="promedio-curso">
+            <!-- El promedio general del curso se mostrará aquí -->
+        </div>
+    </div>
+    
+    <script src="Zoologico.js"></script>
+    <script src="Inventario.js"></script>
+    <script src="SistemaE.js"> </script>
+    <script src="SistemaC.js"> </script>
+
+</body>
+</html>
